@@ -90,14 +90,7 @@ export default function Home() {
           </div>
           <div style={{ marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px", fontSize: "14px" }}>
             <span role="img" aria-label="Location">📍</span>
-            <a 
-              href="https://www.google.com/maps/place/San+Luis+Obispo,+CA/@35.2722916,-120.7116797,13z/data=!3m1!4b1!4m6!3m5!1s0x80ece6be7b6cc227:0xbc0290c2ceef0f46!8m2!3d35.2827524!4d-120.6596156!16zL20vMHI1bHo?entry=ttu&g_ep=EgoyMDI1MDUwNS4wIKXMDSoASAFQAw%3D%3D"
-              target="_blank" 
-              rel="noopener noreferrer"
-              style={{ textDecoration: "none", color: darkMode ? '#63b3ed' : 'inherit' }}
-            >
-              San Luis Obispo, CA, USA
-            </a>
+            San Francisco, CA
           </div>
           <div style={{ marginBottom: "16px", fontSize: "14px", maxWidth: "550px" }}>
             I'm a software engineer focused on building innovative solutions to real-world problems. I want to build products that help people live better lives.
