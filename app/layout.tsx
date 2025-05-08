@@ -13,8 +13,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Rishi Gupta's Personal Website",
+  title: "Rishi Gupta",
   description: "Personal website and portfolio",
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -24,6 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" style={{ margin: 0, padding: 0 }}>
+      <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         style={{ margin: 0, padding: 0, minHeight: "100vh", width: "100%" }}
