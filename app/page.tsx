@@ -1,6 +1,34 @@
-import { FaSquareXTwitter, FaLinkedin, FaGithub, FaLocationDot, FaEnvelope } from "react-icons/fa6";
+'use client';
+
+import { useState, useEffect } from 'react';
 
 export default function Home() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    // No longer checking system preference, always start with light mode
+    setDarkMode(false);
+    localStorage.setItem('darkMode', 'false');
+  }, []);
+
+  useEffect(() => {
+    // Apply dark mode to document
+    if (darkMode) {
+      document.body.classList.add('dark-mode');
+      localStorage.setItem('darkMode', 'true');
+    } else {
+      document.body.classList.remove('dark-mode');
+      localStorage.setItem('darkMode', 'false');
+    }
+  }, [darkMode]);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
+  const bgColor = darkMode ? '#1a1a1a' : 'white';
+  const textColor = darkMode ? 'white' : 'black';
+
   return (
     <div
       className="container flex"
@@ -9,8 +37,34 @@ export default function Home() {
         justifyContent: "center", // Centers the container horizontally
         alignItems: "center", // Centers the container vertically
         minHeight: "100vh", // Makes the container take the full viewport height
+        width: "100%",
+        margin: 0,
+        padding: 0,
+        backgroundColor: bgColor,
+        color: textColor,
       }}
     >
+      <button 
+        onClick={toggleDarkMode}
+        style={{
+          position: 'absolute',
+          top: '20px',
+          left: '20px',
+          background: darkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)',
+          border: 'none',
+          borderRadius: '20px',
+          padding: '8px 16px',
+          cursor: 'pointer',
+          color: textColor,
+          fontWeight: 'bold',
+          boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
+          transition: 'all 0.3s ease'
+        }}
+        aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+      >
+        {darkMode ? "Light Mode" : "Dark Mode"}
+      </button>
+
       <div className="content" style={{ textAlign: "left" }}>
         <div style={{ marginBottom: "10px" }}>
           <div style={{ marginBottom: "16px" }}>
@@ -32,12 +86,12 @@ export default function Home() {
             Rishi Gupta
           </div>
           <div style={{ marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px", fontSize: "14px" }}>
-            <FaLocationDot size={16} />
+            <span role="img" aria-label="Location">📍</span>
             <a 
               href="https://www.google.com/maps/place/San+Luis+Obispo,+CA/@35.2722916,-120.7116797,13z/data=!3m1!4b1!4m6!3m5!1s0x80ece6be7b6cc227:0xbc0290c2ceef0f46!8m2!3d35.2827524!4d-120.6596156!16zL20vMHI1bHo?entry=ttu&g_ep=EgoyMDI1MDUwNS4wIKXMDSoASAFQAw%3D%3D"
               target="_blank" 
               rel="noopener noreferrer"
-              style={{ textDecoration: "none", color: "inherit" }}
+              style={{ textDecoration: "none", color: darkMode ? '#63b3ed' : 'inherit' }}
             >
               San Luis Obispo, CA, USA
             </a>
@@ -93,32 +147,56 @@ export default function Home() {
               href="mailto:rishigupta.personal@gmail.com"
               rel="noopener noreferrer"
               aria-label="Email"
+              style={{ 
+                display: 'flex', 
+                alignItems: 'center',
+                textDecoration: 'none'
+              }}
+              className="social-link"
             >
-              <FaEnvelope size={24} />
+              <span style={{ fontSize: "20px" }}>📧</span>
             </a>
             <a
               href="https://x.com/rishiguptaca"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="X / Twitter"
+              style={{ 
+                display: 'flex', 
+                alignItems: 'center',
+                textDecoration: 'none'
+              }}
+              className="social-link"
             >
-              <FaSquareXTwitter size={24} />
+              <span style={{ fontSize: "20px" }}>𝕏</span>
             </a>
             <a
               href="https://linkedin.com/in/rishiguptalink"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
+              style={{ 
+                display: 'flex', 
+                alignItems: 'center',
+                textDecoration: 'none'
+              }}
+              className="social-link"
             >
-              <FaLinkedin size={24} />
+              <span style={{ fontSize: "20px" }}>🔗</span>
             </a>
             <a
               href="https://github.com/rishiguptagit"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
+              style={{ 
+                display: 'flex', 
+                alignItems: 'center',
+                textDecoration: 'none'
+              }}
+              className="social-link"
             >
-              <FaGithub size={24} />
+              <span style={{ fontSize: "20px" }}>💻</span>
             </a>
           </div>
         </div>

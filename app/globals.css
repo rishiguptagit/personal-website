@@ -12,6 +12,17 @@ body {
   background: rgb(var(--background-rgb));
   font-family: var(--font-geist-sans);
   line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+}
+
+body.dark-mode {
+  --background-rgb: 26, 26, 26;
+  --foreground-rgb: 255, 255, 255;
+  background: #1a1a1a;
+  color: white;
 }
 
 a {
@@ -25,4 +36,30 @@ a:hover {
 
 .max-w-2xl {
   max-width: 42rem;
+}
+
+/* Dark mode styling */
+body.dark-mode a {
+  color: #63b3ed;
+}
+
+body.dark-mode a:hover {
+  color: #4299e1;
+}
+
+/* Transition for smooth theme toggling */
+body, a, button {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Reset any default margins */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Social link hover effects */
+.social-link:hover {
+  text-decoration: underline !important;
 }
