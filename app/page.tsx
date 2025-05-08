@@ -90,7 +90,7 @@ export default function Home() {
           </div>
           <div style={{ marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px", fontSize: "14px" }}>
             <span role="img" aria-label="Location">📍</span>
-            San Francisco, CA
+            San Francisco Bay Area
           </div>
           <div style={{ marginBottom: "16px", fontSize: "14px", maxWidth: "550px" }}>
             I'm a software engineer focused on building innovative solutions to real-world problems. I want to build products that help people live better lives.
