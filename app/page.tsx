@@ -65,7 +65,12 @@ export default function Home() {
         {darkMode ? "Light Mode" : "Dark Mode"}
       </button>
 
-      <div className="content" style={{ textAlign: "left" }}>
+      <div className="content" style={{ 
+        textAlign: "left",
+        maxWidth: "800px",
+        width: "100%",
+        padding: "0 20px", // Add horizontal padding
+      }}>
         <div style={{ marginBottom: "10px" }}>
           <div style={{ marginBottom: "16px" }}>
             <img
