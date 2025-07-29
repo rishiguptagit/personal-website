@@ -110,7 +110,7 @@ export default function Home() {
             <span role="img" aria-label="Location">
               📍
             </span>
-            San Francisco Bay Area
+            Seattle, WA
           </div>
           <div
             style={{
@@ -155,7 +155,7 @@ export default function Home() {
               rel="noopener noreferrer"
             >
               <strong>Cal Poly</strong>
-            </a>
+            </a>{" "}
             <a
               href="http://myunihealth.app"
               target="_blank"
